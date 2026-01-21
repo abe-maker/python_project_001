@@ -1,0 +1,8 @@
+name = input("Wie ist der Name des Versenders? ")
+adressator = input("An wenn soll der newletter geschrieben werden? ")
+print("")
+print(f"Hallo {adressator}")
+print("Ich bin umgezogen.")
+print("Ich wohne nun der der Löffelholzstraße 4.")
+print(f"Mit freundlichen Grüßen {name}")
+print("")
