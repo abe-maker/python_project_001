@@ -1,6 +1,6 @@
 import random
 
-#number generating
+#generating number
 number = random.randint(1, 100)
 
 #user input
