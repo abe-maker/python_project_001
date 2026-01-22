@@ -23,48 +23,17 @@ while True:
 
 
     #lose or win
-    if computerchoise == "r":
-        if userinput == "r":
-            print("you choose r")
-            print("Computer choose r")
-            print("Tie!")
-        elif userinput == "p":
-            print("you choose p")
-            print("Computer choose r")
-            print("you win!")
-        elif userinput == "s":
-            print("you choose s")
-            print("Computer choose r")
-            print("you Loose!")
-
-    elif computerchoise == "p":
-        if userinput == "r":
-            print("you choose r")
-            print("Computer choose p")
-            print("you loose!")
-        elif userinput == "p":
-            print("you choose p")
-            print("Computer choose p")
-            print("Tie!")
-        elif userinput == "s":
-            print("you choose s")
-            print("Computer choose ")
-            print("you win!")
-
-    elif computerchoise == "s":
-        if userinput == "r":
-            print("you choose r")
-            print("Computer choose s")
-            print("you win!")
-        elif userinput == "p":
-            print("you choose p")
-            print("Computer choose s")
-            print("you loose!")
-        elif userinput == "s":
-            print("you choose s")
-            print("Computer choose s")
-            print("Tie!")
+    if computerchoise == userinput:
+        print("Tie!")
     
+    if (computerchoise == "p" and userinput ==  "s") or (computerchoise == "r" and userinput == "p") or (computerchoise == "s" and userinput == "r"):
+        print("You win!")
+    else:
+        print("You loose!")
+
+    #print result
+    print(f"Computer choose {computerchoise}")
+    print(f"You choose {userinput}")
     
     #continue
     choice = input("Continue? (y/n): ").lower()
