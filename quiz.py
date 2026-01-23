@@ -5,7 +5,7 @@ questions = [
 #print question and userinput
 def asking_question(question):
     print(question["prompt"])
-    userinput = input(f"{question["options"]}").lower()
+    userinput = input(f"{question["options"]}").upper()
     return userinput
 
 
@@ -23,7 +23,6 @@ def checking_result(userinput, rightanswer, score):
 def quiz(questions):
     score = 0
     for question in questions:
-        print(question]
         userinput = asking_question(question)
         rightanswer = question["answer"]
         
