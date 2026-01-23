@@ -33,11 +33,12 @@ while True:
     print("")
     
     #continue
-    choice = input("Continue? (y/n): ").lower()
-    if choice == "y":
-        pass
-    elif choice == "n":
-        break
-    else:
-        print("Invalid input!")
-        continue
+    while True:
+        choice = input("Continue? (y/n): ").lower()
+        if choice == "y":
+            continue
+        elif choice == "n":
+            break
+        else:
+            print("Invalid input!")
+            continue

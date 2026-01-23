@@ -1,11 +1,11 @@
 questions = [
-    {"prompt": "Which city is the Capital of France?", "options": "A:Bourdeaux, B:Cannes, C:Paris, D:Marssailes ", "answer": "C"},
+    {"prompt": "Which city is the Capital of France?", "options": "A:Bourdeaux, B:Cannes, C:Paris, D:Marssailes  ", "answer": "C"}, {}
 ]
 
 #print question and userinput
 def asking_question(question):
-    print(f"{question("prompt")}")
-    userinput = input(f"{question("options")}")
+    print(question["prompt"])
+    userinput = input(f"{question["options"]}").lower()
     return userinput
 
 
@@ -21,13 +21,15 @@ def checking_result(userinput, rightanswer, score):
 
 
 def quiz(questions):
+    score = 0
     for question in questions:
+        print(question]
         userinput = asking_question(question)
-        rightanswer = questions("answer")
-        score = 0
+        rightanswer = question["answer"]
+        
         checking_result(userinput, rightanswer, score)
 
-    print(f"Games Over! Your score is {score}")
+    print(f"Game Over! Your score is {score}")
 
 
 
