@@ -11,16 +11,11 @@ while True:
 
 
     #computer choise
-    compnum = random.randint(1,3)
-    if compnum == 1:
-        computerchoise = "r"
-    
-    elif compnum == 2:
-        computerchoise = "p"
+    computerchoices = ["r", "p", "s"]
+    computerchoise = random.choice(computerchoices)
 
-    elif compnum == 3:
-        computerchoise = "s"
-
+    #computer choice assignement
+    values = { "r": "Rock", "p": "Paper", "s": "Scissor"}
 
     #lose or win
     if computerchoise == userinput:
@@ -32,8 +27,8 @@ while True:
         print("You loose!")
 
     #print result
-    print(f"Computer choose {computerchoise}")
-    print(f"You choose {userinput}")
+    print(f"Computer choose {values[computerchoise]}")
+    print(f"You choose {values[userinput]}")
     
     #continue
     choice = input("Continue? (y/n): ").lower()
