@@ -4,6 +4,7 @@ import random
 while True:
     while True:
         userinput = input("Rock, paper, or scissors? (r/p/s): ").lower()
+        print("")
         if userinput == "r" or userinput == "p" or userinput == "s":
             break
         else:
@@ -15,13 +16,13 @@ while True:
     computerchoise = random.choice(computerchoices)
 
     #computer choice assignement
-    values = { "r": "Rock", "p": "Paper", "s": "Scissor"}
+    values = { "r": "Dawye the Rock Johnson", "p": "Paper", "s": "Scissor"}
 
     #lose or win
     if computerchoise == userinput:
         print("Tie!")
     
-    if (computerchoise == "p" and userinput ==  "s") or (computerchoise == "r" and userinput == "p") or (computerchoise == "s" and userinput == "r"):
+    elif (computerchoise == "p" and userinput ==  "s") or (computerchoise == "r" and userinput == "p") or (computerchoise == "s" and userinput == "r"):
         print("You win!")
     else:
         print("You loose!")
@@ -29,6 +30,7 @@ while True:
     #print result
     print(f"Computer choose {values[computerchoise]}")
     print(f"You choose {values[userinput]}")
+    print("")
     
     #continue
     choice = input("Continue? (y/n): ").lower()
@@ -38,3 +40,4 @@ while True:
         break
     else:
         print("Invalid input!")
+        continue
