@@ -3,21 +3,27 @@ import random
 #word db
 words = ["abc", "python", "himalayan", "jesus", "whitefield"]
 
-#manage word
-def manage_word(printword, letter):
-    abcs = ["a", "b", "c"]
-    abcs.remove(letter)
-    for abc in abcs:
-        printword = printword.replace(abc, "_")
+hangword = random.choice(words)
+hiddenword = ["_" for _ in  hangword]
 
 
-#get user input and verarbeite it
-def game(words):
-    hangword = random.choice(words)
-    printword = hangword.split(",")
-    letter = input("letter? ")
+print("Welcome to Hangman!")
 
-    manage_word(printword, letter)
-    print({printword})
+attemps = 8
+print(f" ".join(hiddenword))
+while attemps > 0 and "_" in hiddenword:
+    
+    guess = input("What is your guess?  ")
+    if guess in hangword:
+        for index,letter in enumerate(hangword):
+            if guess == letter:
+                hiddenword[index] = guess 
+                
+        print(f" ".join(hiddenword))
+        print("Correct")
+    else:
+        print("Wrong letter")
+    print("")
+    attemps -= 1
 
-game(words)
+
