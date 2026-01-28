@@ -6,7 +6,7 @@ budget = input("Please enter you budget: ")
 #objects
 remainingbudget = budget
 expenses = {}
-
+totalspend = 0
 
 #do loop
 while True:
@@ -19,14 +19,21 @@ while True:
     print("")
 
     if option == "1":
-        expense = input("Enter your expense description: ")
+        expense = input("Enter your expense description: ").title()
         amount = input("Wnter expense amount: ")
         expenses[expense] = amount
+        totalspend = totalspend + int(expenses[expense])
+        remainingbudget = int(remainingbudget) - int(expenses[expense])
         print(f"Added expense: {expense}, Amount: {amount}")
 
-    
+    elif option == "2":
+        print(f"Total Budget: {budget}")
+        print("Expenses")
+        for key, value in expenses.items():
+            print(f"- {key}: {value}")
+        print(f"Total Spend: {totalspend}")
+        print(f"Remaining Budget: {remainingbudget}")
 
-# adding
+    elif option == "3":
+        break
 
-
-#anzeigen
