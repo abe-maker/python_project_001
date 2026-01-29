@@ -1,4 +1,5 @@
 import tkinter
+import math
 
 button_values = [
     ["AC", "+/-", "%", "÷"], 
@@ -88,8 +89,7 @@ def button_clicked(value):
 
                 clear_all()
 
-
-        elif value == "+-×÷":
+        elif value in "+-×÷":
             if operator is None:
                 A = label["text"]
                 label["text"] = "0"
@@ -108,6 +108,10 @@ def button_clicked(value):
         elif value == "%":
             result = float(label["text"]) / 100
             label["text"] = remove_ceros(result)
+
+    elif value == "√":
+        label["text"] = round(math.sqrt(float(label["text"])), 2)
+
     else:
         if value == ".":
             if value not in label["text"]:
@@ -117,6 +121,8 @@ def button_clicked(value):
                 label["text"] = value
             else:
                 label["text"] += value
+
+    
 
 
 #center the window
